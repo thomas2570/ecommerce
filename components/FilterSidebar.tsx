@@ -16,6 +16,7 @@ export default function FilterSidebar() {
 
   // Sync state with URL if it changes externally
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPrice(searchParams.get('price') || '1000');
   }, [searchParams]);
 

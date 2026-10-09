@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import FilterSidebar from '@/components/FilterSidebar';
 import ProductGrid from '@/components/ProductGrid';
 import { products } from '@/data/products';
+export const instant = false;
 
 type SearchParamsProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

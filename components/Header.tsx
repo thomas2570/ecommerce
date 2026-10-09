@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Search, ShoppingCart, User } from 'lucide-react';
+import { ShoppingCart, User } from 'lucide-react';
 import { Suspense } from 'react';
 import SearchBar from './SearchBar';
 import { useCart } from '@/context/CartContext';

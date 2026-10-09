@@ -10,6 +10,7 @@ export default function SearchBar() {
   const [query, setQuery] = useState(searchParams.get('search') || '');
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setQuery(searchParams.get('search') || '');
   }, [searchParams]);
 
