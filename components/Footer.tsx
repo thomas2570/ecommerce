@@ -7,7 +7,10 @@ export default function Footer() {
         {/* Column 1 */}
         <div className="flex flex-col space-y-4">
           <h3 className="text-xl font-bold mb-2">Filters</h3>
-          <p className="text-sm text-gray-300">All electronics</p>
+          <div className="flex gap-4">
+            <span className="text-sm text-gray-300">All</span>
+            <span className="text-sm text-gray-300">electronics</span>
+          </div>
           <div className="mt-auto pt-8">
             <p className="text-sm text-gray-400">© 2024 American</p>
           </div>
