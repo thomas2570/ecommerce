@@ -1,5 +1,6 @@
 import { Product } from '../types';
 import ProductCard from './ProductCard';
+import SmartphoneCard from './SmartphoneCard';
 
 interface ProductGridProps {
   products: Product[];
@@ -17,9 +18,12 @@ export default function ProductGrid({ products }: ProductGridProps) {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      {products.map((product) => {
+        if (product.title === 'Smartphone') {
+          return <SmartphoneCard key={product.id} product={product} />;
+        }
+        return <ProductCard key={product.id} product={product} />;
+      })}
     </div>
   );
 }
