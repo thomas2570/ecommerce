@@ -69,7 +69,7 @@ export const products: Product[] = [
     title: 'Smartphone',
     price: 699,
     category: 'Electronics',
-    image: 'https://images.unsplash.com/photo-1598327105666-5b89351cb31b?w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1511707171634-5f8f7eb1ce28?w=500&q=80',
     description: 'Latest model smartphone with a brilliant display and powerful processor.',
     rating: 4.8,
   },
