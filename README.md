@@ -3,7 +3,7 @@
 A mini e-commerce product listing application built to showcase modern frontend development practices using Next.js, Tailwind CSS, and React Context.
 
 ## Live Demo
-(https://ecommerce-omega-ten-91.vercel.app/)
+https://ecommerce-omega-ten-91.vercel.app/
 
 ## Tech Stack
 - **Framework:** Next.js (App Router)
