@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, Suspense } from 'react';
+import SearchBar from './SearchBar';
 
 const CATEGORIES = ['All', 'Electronics', 'Clothing', 'Home'];
 
@@ -48,16 +49,23 @@ export default function FilterSidebar() {
 
   return (
     <div className="w-full md:w-64 flex-shrink-0 flex flex-col gap-6">
-      {/* Mobile Toggle Button */}
-      <button 
-        onClick={() => setIsMobileOpen(!isMobileOpen)}
-        className="md:hidden w-full bg-[#0B57B0] text-white p-3 rounded-lg font-bold flex items-center justify-center gap-2 shadow-sm"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
-        </svg>
-        {isMobileOpen ? 'Hide Filters' : 'Show Filters'}
-      </button>
+      {/* Mobile Search and Filter Toggle */}
+      <div className="md:hidden flex gap-2 w-full">
+        <div className="flex-1">
+          <Suspense fallback={<div className="h-[42px] w-full bg-gray-200 rounded-md" />}>
+            <SearchBar />
+          </Suspense>
+        </div>
+        <button 
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="bg-[#0B57B0] text-white px-4 py-2 rounded-lg font-bold flex items-center justify-center gap-2 shadow-sm whitespace-nowrap"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
+          </svg>
+          Filters
+        </button>
+      </div>
 
       {/* Filter Content */}
       <div className={`flex-col gap-6 ${isMobileOpen ? 'flex' : 'hidden'} md:flex`}>

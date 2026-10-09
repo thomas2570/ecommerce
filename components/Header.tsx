@@ -18,7 +18,7 @@ export default function Header() {
         </Link>
 
         {/* Search Bar */}
-        <div className="flex-1 max-w-2xl mx-4">
+        <div className="hidden md:block flex-1 max-w-2xl mx-4">
           <Suspense fallback={<div className="h-9 w-full bg-[#0A4A96] rounded-md opacity-50" />}>
             <SearchBar />
           </Suspense>
